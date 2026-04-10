@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Interview Crack Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">BCA to Java Developer</p>
+        <h1>Java Interview Crack Platform</h1>
+        <p>
+          Practice most asked Java interview questions, track your progress,
+          and build confidence for real interviews.
+        </p>
+      </div>
+      <button id="quickPracticeBtn" class="primary">Quick Practice</button>
+    </header>
+
+    <main class="layout">
+      <aside class="panel filters">
+        <h2>Filter Questions</h2>
+        <label>
+          Search
+          <input id="searchInput" type="text" placeholder="e.g. HashMap, JVM" />
+        </label>
+
+        <label>
+          Category
+          <select id="categorySelect">
+            <option value="all">All Categories</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty
+          <select id="difficultySelect">
+            <option value="all">All Levels</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <div class="stats">
+          <h3>Your Progress</h3>
+          <p>Total Questions: <strong id="totalCount">0</strong></p>
+          <p>Practiced: <strong id="practicedCount">0</strong></p>
+          <p>Confident: <strong id="confidentCount">0</strong></p>
+        </div>
+
+      </aside>
+
+      <section class="panel list-panel">
+        <div class="list-header">
+          <h2>Question Bank</h2>
+          <span id="resultCount">0 results</span>
+        </div>
+        <div id="questionList" class="question-list"></div>
+      </section>
+
+      <section class="panel detail-panel">
+        <h2>Practice Area</h2>
+        <div id="detailEmpty" class="empty-state">
+          Select a question from the list to begin.
+        </div>
+
+        <article id="questionDetail" class="question-detail hidden">
+          <div class="meta-row">
+            <span id="detailCategory" class="chip"></span>
+            <span id="detailDifficulty" class="chip"></span>
+          </div>
+
+          <h3 id="detailQuestion"></h3>
+          <button id="showAnswerBtn" class="secondary">Show Ideal Answer</button>
+
+          <div id="answerBlock" class="answer hidden">
+            <h4>Ideal Answer</h4>
+            <p id="detailAnswer"></p>
+            <h4>Why This Matters</h4>
+            <p id="detailExplanation"></p>
+          </div>
+
+          <div class="practice-actions">
+            <button id="markPracticedBtn" class="secondary">Mark Practiced</button>
+            <button id="markConfidentBtn" class="primary">I Am Confident</button>
+          </div>
+        </article>
+
+        <section class="add-question">
+          <h3>Add Your Own Question</h3>
+          <form id="addQuestionForm">
+            <input id="customQuestion" required placeholder="Question" />
+            <textarea id="customAnswer" required placeholder="Answer"></textarea>
+            <textarea id="customExplanation" placeholder="Why this is important"></textarea>
+            <div class="row">
+              <select id="customCategory" required>
+                <option value="Core Java">Core Java</option>
+                <option value="OOP">OOP</option>
+                <option value="Collections">Collections</option>
+                <option value="JVM">JVM</option>
+                <option value="Multithreading">Multithreading</option>
+                <option value="Exception Handling">Exception Handling</option>
+                <option value="Java 8+">Java 8+</option>
+                <option value="Spring Basics">Spring Basics</option>
+                <option value="SQL & DB">SQL & DB</option>
+                <option value="System Design Basics">System Design Basics</option>
+                <option value="Testing">Testing</option>
+                <option value="Project Discussion">Project Discussion</option>
+                <option value="HR & Package">HR & Package</option>
+              </select>
+              <select id="customDifficulty" required>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            <button type="submit" class="primary">Save Question</button>
+          </form>
+        </section>
+
+        <section class="coding-round">
+          <div class="coding-head">
+            <h3>Coding Round Practice</h3>
+            <span class="mini-note">Interview style Java practice</span>
+          </div>
+
+          <label>
+            Choose Coding Question
+            <select id="codingQuestionSelect"></select>
+          </label>
+
+          <div class="coding-meta">
+            <span id="codingDifficulty" class="chip"></span>
+            <span id="codingTopic" class="chip"></span>
+          </div>
+
+          <h4 id="codingTitle"></h4>
+          <p id="codingPrompt" class="coding-prompt"></p>
+          <p id="codingExample" class="coding-example"></p>
+
+          <div class="timer-row">
+            <strong id="codingTimer">30:00</strong>
+            <button type="button" id="startTimerBtn" class="secondary">Start Timer</button>
+            <button type="button" id="resetTimerBtn" class="secondary">Reset Timer</button>
+          </div>
+
+          <textarea
+            id="codingEditor"
+            class="code-editor"
+            spellcheck="false"
+            placeholder="Write your Java code here..."
+          ></textarea>
+
+          <div class="editor-actions">
+            <button type="button" id="saveDraftBtn" class="primary">Save Draft</button>
+            <button type="button" id="resetCodeBtn" class="secondary">Reset Code</button>
+            <button type="button" id="showSolutionBtn" class="secondary">Show Sample Solution</button>
+          </div>
+
+          <p class="mini-note">Browser note: this editor is for writing and practicing Java logic. Compilation is not available in this static page.</p>
+
+          <pre id="solutionBlock" class="solution-block hidden"></pre>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
